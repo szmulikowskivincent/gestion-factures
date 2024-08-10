@@ -63,7 +63,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let facture of factures">
-        <td>{{ facture.date | date : "dd/MM/yyyy" }}</td>
+        <td>✅ {{ facture.date | date : "dd/MM/yyyy" }}</td>
         <td>{{ facture.description }}</td>
         <td>{{ facture.montant | currency : "EUR" }}</td>
         <td>
