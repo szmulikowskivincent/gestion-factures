@@ -1,0 +1,25 @@
+.accueil-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+}
+
+.accueil-container img {
+  margin-block-end: 20px;
+}
+
+.accueil-container h1 {
+  color: #002f6c;
+  font-size: 2.5rem;
+  margin-block-end: 20px;
+}
+
+.accueil-container p {
+  color: #002f6c;
+  font-size: 1.2rem;
+}
+
+
+
+

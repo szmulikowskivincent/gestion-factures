@@ -1,0 +1,42 @@
+<div class="factures-loyer">
+  <h2>Factures de Loyer</h2>
+
+  <form (ngSubmit)="addFacture()">
+    <label for="montant">Montant:</label>
+    <input
+      id="montant"
+      [(ngModel)]="newFacture.montant"
+      name="montant"
+      required
+      type="number"
+    />
+
+    <label for="date">Date:</label>
+    <input
+      id="date"
+      [(ngModel)]="newFacture.date"
+      name="date"
+      required
+      type="date"
+    />
+
+    <label for="description">Description:</label>
+    <input
+      id="description"
+      [(ngModel)]="newFacture.description"
+      name="description"
+      required
+      type="text"
+    />
+
+    <button type="submit">Ajouter Facture</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let facture of factures">
+      {{ facture.date | date : "shortDate" }} - {{ facture.description }} :
+      {{ facture.montant | currency }}
+      <button (click)="deleteFacture(facture.id)">Supprimer</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,29 @@
+.factures-loyer {
+  margin: 20px;
+}
+
+form {
+  margin-block-end: 20px;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+input {
+  margin: 5px 0 10px;
+}
+
+button {
+  margin-block-start: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
