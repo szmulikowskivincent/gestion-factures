@@ -18,8 +18,8 @@ export class FacturesLoyerComponent implements OnInit {
     montant: 0,
     date: new Date(),
     description: '',
-    dateLimite: new Date(), // Assurez-vous que cette propriété est définie
-    encodageDate: new Date() // Assurez-vous que cette propriété est définie
+    dateLimite: new Date(),
+    encodageDate: new Date() 
   };
   allFacturesUpToDate: boolean = true;
 alertMessage: any;
@@ -46,7 +46,7 @@ isOrderUpToDate: any;
         ? Math.max(...this.factures.map((f) => f.id)) + 1
         : 1;
     this.newFacture.id = id;
-    this.newFacture.encodageDate = new Date(); // Enregistrer la date d'encodage
+    this.newFacture.encodageDate = new Date(); 
     this.facturesService.addFacture(this.newFacture);
     this.newFacture = { id: 0, montant: 0, date: new Date(), description: '', dateLimite: new Date(), encodageDate: new Date() };
     this.loadFactures();
