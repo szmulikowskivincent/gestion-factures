@@ -6,37 +6,42 @@ import { FactureLoyer } from '../interfaces/facturesloyer';
   providedIn: 'root',
 })
 export class FacturesLoyerService {
-  private factures: FactureLoyer[] = [
-    {
-      id: 1,
-      montant: 800,
-      date: new Date(),
-      description: 'Loyer pour janvier',
-    },
-    {
-      id: 2,
-      montant: 800,
-      date: new Date(),
-      description: 'Loyer pour février',
-    },
-  ];
+  private localStorageKey = 'facturesLoyer';
+  private conversionRateToEuro = 1.0;
 
   getFactures(): Observable<FactureLoyer[]> {
-    return of(this.factures);
+    const storedFactures = localStorage.getItem(this.localStorageKey);
+    const factures: FactureLoyer[] = storedFactures
+      ? JSON.parse(storedFactures)
+      : [];
+    return of(factures);
   }
 
   addFacture(facture: FactureLoyer): void {
-    this.factures.push(facture);
-  }
+    const factures = this.getFacturesFromLocalStorage();
 
-  updateFacture(updatedFacture: FactureLoyer): void {
-    const index = this.factures.findIndex((f) => f.id === updatedFacture.id);
-    if (index !== -1) {
-      this.factures[index] = updatedFacture;
-    }
+    facture.montant = this.convertToEuro(facture.montant);
+
+    factures.push(facture);
+    this.saveFacturesToLocalStorage(factures);
   }
 
   deleteFacture(id: number): void {
-    this.factures = this.factures.filter((f) => f.id !== id);
+    let factures = this.getFacturesFromLocalStorage();
+    factures = factures.filter((facture) => facture.id !== id);
+    this.saveFacturesToLocalStorage(factures);
+  }
+
+  private convertToEuro(montant: number): number {
+    return montant * this.conversionRateToEuro;
+  }
+
+  private getFacturesFromLocalStorage(): FactureLoyer[] {
+    const storedFactures = localStorage.getItem(this.localStorageKey);
+    return storedFactures ? JSON.parse(storedFactures) : [];
+  }
+
+  private saveFacturesToLocalStorage(factures: FactureLoyer[]): void {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(factures));
   }
 }

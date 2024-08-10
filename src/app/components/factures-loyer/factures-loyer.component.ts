@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FactureLoyer } from '../../interfaces/facturesloyer';
@@ -11,14 +11,19 @@ import { FacturesLoyerService } from '../../services/factures-loyer.service';
   styleUrls: ['./factures-loyer.component.css'],
   imports: [CommonModule, FormsModule],
 })
-export class FacturesLoyerComponent {
+export class FacturesLoyerComponent implements OnInit {
   factures: FactureLoyer[] = [];
   newFacture: FactureLoyer = {
     id: 0,
     montant: 0,
     date: new Date(),
     description: '',
+    dateLimite: new Date(), // Assurez-vous que cette propriété est définie
+    encodageDate: new Date() // Assurez-vous que cette propriété est définie
   };
+  allFacturesUpToDate: boolean = true;
+alertMessage: any;
+isOrderUpToDate: any;
 
   constructor(private facturesService: FacturesLoyerService) {}
 
@@ -29,7 +34,10 @@ export class FacturesLoyerComponent {
   loadFactures(): void {
     this.facturesService
       .getFactures()
-      .subscribe((factures) => (this.factures = factures));
+      .subscribe((factures) => {
+        this.factures = factures;
+        this.checkFacturesStatus();
+      });
   }
 
   addFacture(): void {
@@ -38,8 +46,9 @@ export class FacturesLoyerComponent {
         ? Math.max(...this.factures.map((f) => f.id)) + 1
         : 1;
     this.newFacture.id = id;
+    this.newFacture.encodageDate = new Date(); // Enregistrer la date d'encodage
     this.facturesService.addFacture(this.newFacture);
-    this.newFacture = { id: 0, montant: 0, date: new Date(), description: '' };
+    this.newFacture = { id: 0, montant: 0, date: new Date(), description: '', dateLimite: new Date(), encodageDate: new Date() };
     this.loadFactures();
   }
 
@@ -47,4 +56,18 @@ export class FacturesLoyerComponent {
     this.facturesService.deleteFacture(id);
     this.loadFactures();
   }
+
+  checkFacturesStatus(): void {
+    const today = new Date();
+    const overdueFactures = this.factures.filter(facture => facture.dateLimite && new Date(facture.dateLimite) < today);
+    
+    this.allFacturesUpToDate = overdueFactures.length === 0;
+
+    if (this.allFacturesUpToDate) {
+      alert('Toutes vos factures de loyer sont à jour!');
+    } else {
+      alert('Attention : Certaines factures sont en retard de paiement.');
+    }
+  }
 }
+

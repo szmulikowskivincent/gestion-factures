@@ -1,29 +1,124 @@
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: start;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input {
+  margin-block-end: 15px;
+  inline-size: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.factures-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  margin-block-start: 20px;
+}
+
+.factures-table th,
+.factures-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: start;
+}
+
+.factures-table th {
+  background-color: #f2f2f2;
+}
+
+.factures-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.factures-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.factures-table button {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.factures-table button:hover {
+  background-color: #c82333;
+}
+
 .factures-loyer {
   margin: 20px;
 }
 
-form {
-  margin-block-end: 20px;
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  inline-size: 300px;
 }
 
-label {
-  display: block;
-  margin: 5px 0;
+.factures-table {
+  inline-size: 100%;
+  border-collapse: collapse;
 }
 
-input {
-  margin: 5px 0 10px;
+.factures-table th,
+.factures-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: start;
 }
 
-button {
-  margin-block-start: 10px;
+.description-column {
+  text-align: start;
+  vertical-align: middle;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.error-border {
+  border: 2px solid red;
+  outline: none;
 }
 
-li {
-  margin: 5px 0;
+.success-border {
+  border: 2px solid green;
+  outline: none;
 }
+
+input:focus.error-border {
+  border-color: darkred;
+}
+
+input:focus.success-border {
+  border-color: darkgreen;
+}
+
+
+
+
+

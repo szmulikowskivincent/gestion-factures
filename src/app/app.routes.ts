@@ -10,7 +10,7 @@ import { FacturesTaxesComponent } from './components/factures-taxes/factures-tax
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: '', redirectTo: '/factures-loyer', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
   { path: 'factures-loyer', component: FacturesLoyerComponent },
   { path: 'factures-eau', component: FacturesEauComponent },
