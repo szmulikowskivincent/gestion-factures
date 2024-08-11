@@ -1,0 +1,57 @@
+.luminus-view {
+  margin: 20px auto;
+  max-inline-size: 1200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+iframe {
+  border: none;
+  inline-size: 100%;
+  block-size: 550px;
+}
+
+.luminus-link {
+  text-align: center;
+  margin: 20px;
+}
+
+.btn-luminus {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-luminus:hover {
+  background-color: #0056b3;
+}
+
+.solde-container {
+  position: fixed;
+  inset-block-start: 90px;
+  inset-inline-end: 10px;
+  padding: 15px 20px;
+  background-color: #f0f8ff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.solde-message {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.solde-amount {
+  font-size: 20px;
+  color: black;
+}

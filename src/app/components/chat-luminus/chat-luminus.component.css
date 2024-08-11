@@ -1,0 +1,23 @@
+.chat-container {
+  margin-block-start: 20px;
+}
+
+.chat-button {
+  background-color: #ff6600;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 3px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chat-button:hover {
+  background-color: #ff8533;
+  border-color: solid 3px#0056b3;
+}
+
+.chat-container h3 {
+  color: #007bff;
+  font-family: Arial, sans-serif;
+}

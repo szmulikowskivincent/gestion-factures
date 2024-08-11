@@ -12,6 +12,7 @@ import { FacturesAssuranceIncendieComponent } from './components/factures-assura
 import { FacturesMutuellesComponent } from './components/factures-mutuelles/factures-mutuelles.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ChatLuminusComponent } from './components/chat-luminus/chat-luminus.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FacturesAssuranceIncendieComponent,
     FacturesMutuellesComponent,
     AccueilComponent,
-    FooterComponent
+    FooterComponent,
+    ChatLuminusComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'], 
