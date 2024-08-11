@@ -1,3 +1,33 @@
+<div class="modal" [ngClass]="{ 'show-modal': showModal }">
+  <div class="modal-content">
+    <h2 style="text-decoration: underline">login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label for="username"></label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="username"
+        required
+        class="center-placeholder"
+        style="font-size: 18px"
+      />
+      <label for="password"></label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="password"
+        required
+        class="center-placeholder"
+        style="font-size: 18px"
+      />
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+</div>
 <nav class="navbar">
   <a style="font-size: 20px" href="http://localhost:4200/accueil">Accueil</a>
   <a style="font-size: 20px" href="http://localhost:4200/factures-loyer"

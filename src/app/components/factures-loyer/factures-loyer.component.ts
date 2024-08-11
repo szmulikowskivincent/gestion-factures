@@ -12,6 +12,12 @@ import { FacturesLoyerService } from '../../services/factures-loyer.service';
   imports: [CommonModule, FormsModule],
 })
 export class FacturesLoyerComponent implements OnInit {
+closeModal() {
+throw new Error('Method not implemented.');
+}
+login() {
+throw new Error('Method not implemented.');
+}
   factures: FactureLoyer[] = [];
   newFacture: FactureLoyer = {
     id: 0,
@@ -24,6 +30,10 @@ export class FacturesLoyerComponent implements OnInit {
   allFacturesUpToDate: boolean = true;
 alertMessage: any;
 isOrderUpToDate: any;
+showModal: any;
+email: any;
+pseudo: any;
+password: any;
 
   constructor(private facturesService: FacturesLoyerService) {}
 
