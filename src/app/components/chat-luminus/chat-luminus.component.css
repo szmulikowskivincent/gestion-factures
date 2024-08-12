@@ -1,5 +1,9 @@
 .chat-container {
   margin-block-start: 20px;
+  position: fixed;
+  inset-block-start: 1020px;
+  inset-inline-start: 2290px;
+  z-index: 1000;
 }
 
 .chat-button {
@@ -14,7 +18,7 @@
 
 .chat-button:hover {
   background-color: #ff8533;
-  border-color: solid 3px#0056b3;
+  border-color: solid 3px #0056b3;
 }
 
 .chat-container h3 {
