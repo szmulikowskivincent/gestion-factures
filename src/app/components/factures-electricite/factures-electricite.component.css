@@ -6,12 +6,6 @@
   overflow: hidden;
 }
 
-iframe {
-  border: none;
-  inline-size: 100%;
-  block-size: 550px;
-}
-
 .luminus-link {
   text-align: center;
   margin: 20px;
@@ -54,4 +48,101 @@ iframe {
 .solde-amount {
   font-size: 20px;
   color: black;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 20px;
+}
+
+.form-group {
+  margin-inline-end: 20px;
+}
+
+.form-group label {
+  margin-inline-end: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 5px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+
+.btn-calculate {
+  background-color: #3374ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border: solid 2px white;
+}
+
+.btn-calculate:hover {
+  background-color: #007bff;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  inline-size: 80%;
+  max-inline-size: 500px;
+  text-align: center;
+}
+
+.btn-close {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-block-start: 10px;
+}
+
+.btn-close:hover {
+  background-color: #0056b3;
+}
+
+.results-container {
+  margin: 20px;
+}
+
+table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
 }

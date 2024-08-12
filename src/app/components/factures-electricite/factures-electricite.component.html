@@ -1,17 +1,100 @@
 <br /><br />
 <h1 align="center">💲💡💵</h1>
-<h1 align="center" style="text-decoration: underline">Facture électricitè</h1>
+<h1 align="center" style="text-decoration: underline">Facture électricité</h1>
 <br />
-<div class="luminus-view">
-  <iframe
-    src="https://www.bing.com/videos/riverview/relatedvideo?q=video+luminus&mid=0AFCC8CEDB1D3FAA10640AFCC8CEDB1D3FAA1064&FORM=VIRE"
-    width="75%"
-    height="500px"
-    style="border: none"
-  >
-  </iframe>
+<div class="form-container" align="center">
+  <form (ngSubmit)="calculateConsumption()">
+    <div class="form-group">
+      <label style="font-size: 20px" for="month">Mois:</label>
+      &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;
+      <input
+        type="text"
+        id="month"
+        name="month"
+        [(ngModel)]="month"
+        placeholder="Mois"
+        required
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label style="font-size: 20px" for="kwDay">kWh Jour:</label>
+      &#160;
+      <input
+        type="number"
+        id="kwDay"
+        name="kwDay"
+        [(ngModel)]="kwDay"
+        placeholder="Consommation Jour"
+        required
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label style="font-size: 20px" for="kwNight">kWh Nuit:</label>
+      &#160;
+      <input
+        type="number"
+        id="kwNight"
+        name="kwNight"
+        [(ngModel)]="kwNight"
+        placeholder="Consommation Nuit"
+        required
+      />
+    </div>
+    <br />
+    <button
+      style="border-radius: 5px; border-color: solid 3px#007bff"
+      type="submit"
+      class="btn-calculate"
+    >
+      Calculer
+    </button>
+  </form>
 </div>
 <br />
+<div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Résultats de la Facture</h2>
+    <p>
+      <strong>Coût Jour:</strong> {{ dayCost | currency : "EUR" : "symbol" }}
+    </p>
+    <p>
+      <strong>Coût Nuit:</strong> {{ nightCost | currency : "EUR" : "symbol" }}
+    </p>
+    <p>
+      <strong>Coût Total:</strong> {{ totalCost | currency : "EUR" : "symbol" }}
+    </p>
+    <button (click)="closeModal()" class="btn-close">Fermer</button>
+  </div>
+</div>
+<br /><br />
+<div *ngIf="results.length > 0" class="results-container">
+  <h2 align="center">Résultats de la Facture</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Mois</th>
+        <th>kWh Jour</th>
+        <th>kWh Nuit</th>
+        <th>Coût Jour</th>
+        <th>Coût Nuit</th>
+        <th>Coût Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.month }}</td>
+        <td>{{ result.kwDay }}</td>
+        <td>{{ result.kwNight }}</td>
+        <td>{{ result.dayCost | currency : "EUR" : "symbol" }}</td>
+        <td>{{ result.nightCost | currency : "EUR" : "symbol" }}</td>
+        <td>{{ result.totalCost | currency : "EUR" : "symbol" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br /><br />
 <div class="luminus-link">
   <a href="https://secure.luminus.be/fr/zoneclient/" target="_blank">
     <button
@@ -42,4 +125,5 @@
     </a>
   </h3>
 </div>
+<br /><br /><br /><br /><br /><br /><br />
 <app-chat-luminus></app-chat-luminus>
