@@ -48,16 +48,5 @@
   outline: none;
 }
 
-.image-container {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-}
-
-.image-container img {
-  max-block-size: 210px; 
-  margin: 0 0px; 
-}
-
 
 

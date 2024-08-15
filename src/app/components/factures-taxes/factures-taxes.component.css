@@ -1,0 +1,31 @@
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline-start: 1050px;
+}
+
+.image-container img {
+  max-block-size: 125px;
+  margin: 0 0px;
+}
+
+.select-container {
+  display: flex;
+  margin-inline-start: 0px;
+}
+
+.red-select {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: white solid 3px
+}
+
+.red-select:hover {
+  background-color: #cc0000;
+}

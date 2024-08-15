@@ -50,3 +50,15 @@ iframe {
 .info-window p strong {
   color: #ffd700;
 }
+
+.image-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-inline-start: 1050px; 
+}
+
+.image-container img {
+  max-block-size: 70px; 
+  margin: 0 0px; 
+}
